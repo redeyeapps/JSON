@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FastParse"
-  s.version      = "0.16.4"
+  s.version      = "0.16.3-cocoapods"
   s.summary      = "The fastest type-safe native Swift JSON parser available."
 
   # This description is used to generate tags and improve search results.
