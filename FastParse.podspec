@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FastParse"
-  s.version      = "0.16.3"
+  s.version      = "0.16.4"
   s.summary      = "The fastest type-safe native Swift JSON parser available."
 
   # This description is used to generate tags and improve search results.
@@ -32,10 +32,10 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/vdka/JSON"
-  s.license      = { :type => "MIT", :file => "LICENCE.md" }
+  s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.author             = "Ethan Jackwitz"
   s.ios.deployment_target = "8.0" # Because we're using frameworks
-  s.source       = { :git => "https://github.com/redeyeapps/JSON.git" }
+  s.source       = { :git => "https://github.com/redeyeapps/JSON.git", :tag => "#{s.version}" }
   s.source_files  = "Sources", "Sources/**/*.swift"
 
 end
