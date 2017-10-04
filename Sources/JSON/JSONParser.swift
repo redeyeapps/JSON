@@ -428,7 +428,7 @@ extension JSON.Parser {
     var divisor: Double = 10
     var exponent: UInt64 = 0
     var negativeExponent = false
-    var overflow: ArithmeticOverflow
+    var overflow = false
 
     repeat {
 
@@ -436,28 +436,28 @@ extension JSON.Parser {
       case numbers? where !seenDecimal && !seenExponent:
 
         (significand, overflow) = significand.multipliedReportingOverflow(by: 10)
-        guard case .none = overflow else { throw Error.Reason.numberOverflow }
+        guard !overflow else { throw Error.Reason.numberOverflow }
 
         (significand, overflow) = significand.addingReportingOverflow(UInt64(pop() - zero))
-        guard case .none = overflow else { throw Error.Reason.numberOverflow }
+        guard !overflow else { throw Error.Reason.numberOverflow }
 
       case numbers? where seenDecimal && !seenExponent:
 
         divisor *= 10
 
         (mantisa, overflow) = mantisa.multipliedReportingOverflow(by: 10)
-        guard case .none = overflow else { throw Error.Reason.numberOverflow }
+        guard !overflow else { throw Error.Reason.numberOverflow }
 
         (mantisa, overflow) = mantisa.addingReportingOverflow(UInt64(pop() - zero))
-        guard case .none = overflow else { throw Error.Reason.numberOverflow }
+        guard !overflow else { throw Error.Reason.numberOverflow }
 
       case numbers? where seenExponent:
 
         (exponent, overflow) = exponent.multipliedReportingOverflow(by: 10)
-        guard case .none = overflow else { throw Error.Reason.numberOverflow }
+        guard !overflow else { throw Error.Reason.numberOverflow }
 
         (exponent, overflow) = exponent.addingReportingOverflow(UInt64(pop() - zero))
-        guard case .none = overflow else { throw Error.Reason.numberOverflow }
+        guard !overflow else { throw Error.Reason.numberOverflow }
 
       case decimal? where !seenExponent && !seenDecimal:
 
