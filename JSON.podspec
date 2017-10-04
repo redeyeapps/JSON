@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.author             = "Ethan Jackwitz"
   s.ios.deployment_target = "8.0" # Because we're using frameworks
-  s.source       = { :git => "https://github.com/vdka/JSON.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/redeyeapps/JSON.git", :branch => "swift4", :tag => "#{s.version}" }
   s.source_files  = "Sources", "Sources/**/*.swift"
 
 end
