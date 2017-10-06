@@ -12,10 +12,10 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/vdka/JSON"
-  s.license      = { :type => "MIT", :file => "LICENSE.md" }
+  s.license      = { :type => "MIT", :file => "LICENCE.md" }
   s.author             = "Ethan Jackwitz"
   s.ios.deployment_target = "8.0" # Because we're using frameworks
-  s.source       = { :git => "https://github.com/redeyeapps/JSON.git", :branch => "swift4" }
+  s.source       = { :git => "https://github.com/redeyeapps/JSON.git" }
   s.source_files  = "Sources", "Sources/**/*.swift"
 
 end
